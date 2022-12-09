@@ -6,13 +6,13 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 10:56:38 by loadjou           #+#    #+#             */
-/*   Updated: 2022/12/09 12:46:14 by loadjou          ###   ########.fr       */
+/*   Updated: 2022/12/09 12:59:56 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int     only_digits(char **argv)
+int	only_digits(char **argv)
 {
 	int	i;
 	int	j;
@@ -20,21 +20,21 @@ int     only_digits(char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		// printf("%s\n", argv[i]);
 		j = 0;
 		while (argv[i][j++])
-            if (!((argv[i][j] >= '0' && argv[i][j] <= '9') || (argv[i][j] == ' ')))
+			if (!((argv[i][j] >= '0' && argv[i][j] <= '9')
+					|| (argv[i][j] == ' ')))
 				return (0);
-        i++;
+		i++;
 	}
 	return (1);
 }
 
 long	ft_atol(char *str)
 {
-	long			i;
-	int				sign;
-	long long int	result;
+	long i;
+	int sign;
+	long long int result;
 
 	i = 0;
 	sign = 1;

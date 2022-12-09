@@ -6,101 +6,90 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 13:15:20 by loadjou           #+#    #+#             */
-/*   Updated: 2022/12/07 17:55:54 by loadjou          ###   ########.fr       */
+/*   Updated: 2022/12/09 12:47:16 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h> 
-// #include <stdlib.h> 
-// #include <sys/types.h> 
-// #include <unistd.h> 
-// #include <sys/wait.h> 
-// #include <signal.h>
+
+#include "../include/philo.h"
+
+# define NC	"\e[0m"
+# define YELLOW	"\e[1;33m"
+
 
 /*
-how to create threads in c
-
-1. Create a thread variable
-
-Create a variable of type pthread_t that will be used to store the thread identifier returned by the pthread_create() function.
-
-2. Create the thread
-
-Call the pthread_create() function with the thread variable as one of its arguments. This function takes four arguments: a pointer to a thread variable, attributes, start routine, and arguments for the start routine.
-
-3. Execute the thread
-
-Once the thread is created, it will immediately begin execution, starting at the start routine specified in the pthread_create() call.
-
-4. Join the thread
-
-When the main thread has finished executing, it can wait for the newly created thread to finish by calling the pthread_join() function with the thread variable as its argument.
-This will cause the main thread to pause until the new thread has finished executing.
-*/
-
-// int main() 
-// { 
-//     int pid = fork();
-//     // pid = fork();
-//     // pid = fork();
-//     // pid = fork();
-//     // pid = fork();
-//     // pid = fork();
-  
-//     if (pid == 0) { 
-//         printf("pid = %i\n", pid);
-//         printf("Child process created\n"); 
-//         sleep(30); 
-//     } 
-//     else { 
-//         printf("Parent process created\n"); 
-//         // usleep(10); 
-//         kill(pid, SIGKILL); 
-//         printf("Child process killed\n"); 
-//     } 
-  
-//     return 0; 
-// }
-
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <pthread.h>
-
-void* routine()
+void* routine(int *i_value)
 {
-    static int i = 1;
-    printf("Message from thread nb %d\n", i);
+    // t_table *table;
+    // table = (t_table *)args;
+    // table->philo_nb = 1;
+    int i = (int *)i_value;
+    printf("Message from thread nb %d\n", i[0]);
     i++;
     return 0;
 }
+*/
 
 
-int main()
+void    init_vars(char **argv, t_table *tab)
 {
-    pthread_t t, t1, t2;
-    int th;
-    // int i = 1;
-    /*
-    while(i < 5)
+    tab->philos = malloc(sizeof(t_philos));
+    tab->philos_nb = ft_atol(argv[1]);
+    tab->philos->time_to_die = ft_atol(argv[2]);
+    tab->time_to_eat = ft_atol(argv[3]);
+    tab->time_to_sleep = ft_atol(argv[4]);
+    tab->repeat_time = INT_MAX;
+    if(argv[5])
+        tab->repeat_time = ft_atol(argv[5]);
+    print_data(tab);
+}
+
+
+/*
+
+// Declare a function pointer type
+typedef void (*routine_t)(int*);
+ 
+// Declare the routine() function
+void routine(int* argument) {
+    // Access the argument by dereferencing the pointer
+    int argument_value = *argument;
+ 
+    // Use the argument
+    printf("Argument value: %d\n", argument_value);
+}
+ 
+// Create a thread
+pthread_t thread_id;
+int argument_value = 5;
+pthread_create(&thread_id, NULL, (routine_t) routine, (void*) &argument_value);
+*/
+
+
+
+int	main(int argc, char **argv)
+{
+    t_table tab;
+    if(argc <= 6 && argc >= 5)
     {
-        pthread_create(&t, NULL, routine(i), NULL);
-        pthread_join(t, NULL);
-        i++;
+        if(only_digits(&argv[1]) == 0)
+        {
+            printf("Args format not accepted!\n");
+            return(0);
+        }
+        init_vars(argv, &tab);
     }
+    else
+        printf("Please insert args as follow: [int] [int] [int] [int] [int (optional)]\n");
+    /*
+    pthread_t add;
+    // t_table *table = NULL;
+    int izzan;
+    int i[10];
+    i[0] = 100;
+    // table->philo_nb = 0;
+    izzan = pthread_create(&add, NULL, &routine, (void *) &i);
+    printf("%d\n", izzan);
     */
-    th = pthread_create(&t, NULL, &routine, NULL);
-    if(th)
-        printf("Unable to create thread");
-    
-    pthread_create(&t1, NULL, &routine, NULL);
-    pthread_create(&t2, NULL, &routine, NULL);
-    
-    pthread_join(t, NULL);
-    pthread_join(t1, NULL);
-    pthread_join(t2, NULL);
-        
-    return 0;
+	return (0);
 }

@@ -1,27 +1,53 @@
 
 NAME = philo
 
+SRCS_PATH = srcs/
+
 CC = gcc
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=thread -g
+RM = rm -f
 
-CFLAGS = -Wall -Werror -Wextra -pthread
+SRCS_FILES = main.c logs.c utils.c
 
-RM = rm -rf
+SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 
-SRCS = srcs/main.c
+OBJS = $(SRCS:.c=.o)
 
-OBJS = $(SRCS:%.c=%.o)
+all: 	$(NAME)
+	@echo "$(GREEN)Your program compiled succefully!💥\n$(DEFAULT)"
 
-all: $(NAME)
 
- $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo "$(NAME) created!$(DEFAULT)💯"
+
+
+
+
 
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
+	@echo "$(YELLOW)object files deleted!$(DEFAULT)💯"
 
-fclean: clean
-		$(RM) $(NAME)
-re:
-	all fclean
-.PHONY:
-	all clean fclean re
+fclean:	clean
+	@$(RM) $(NAME) $(LIBFT)
+
+commit:
+	git add .
+	git commit -m "$(COMMIT)"
+
+
+re:		fclean all
+
+
+
+.PHONY:	all clean libft fclean re
+
+
+
+#COLORS
+RED = \033[1;31m
+GREEN = \033[1;32m
+YELLOW = \033[1;33m
+DEFAULT = \033[0m
+COMMIT = $(shell date "+%d %B %T")

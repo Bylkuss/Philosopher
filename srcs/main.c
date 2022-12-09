@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 13:15:20 by loadjou           #+#    #+#             */
-/*   Updated: 2022/12/09 13:00:43 by loadjou          ###   ########.fr       */
+/*   Updated: 2022/12/09 13:02:06 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #define NC "\e[0m"
 #define YELLOW "\e[1;33m"
+
 
 /*
 void* routine(int *i_value)
@@ -58,3 +59,4 @@ int main(int argc, char **argv)
         printf("Please insert args as follow: [int] [int] [int] [int] [int (optional)]\n");
     return (0);
 }
+

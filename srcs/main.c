@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 13:15:20 by loadjou           #+#    #+#             */
-/*   Updated: 2022/12/09 12:47:16 by loadjou          ###   ########.fr       */
+/*   Updated: 2022/12/09 12:58:17 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int	main(int argc, char **argv)
             return(0);
         }
         init_vars(argv, &tab);
+        free(tab.philos);
     }
     else
         printf("Please insert args as follow: [int] [int] [int] [int] [int (optional)]\n");

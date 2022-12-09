@@ -34,7 +34,7 @@ fclean:	clean
 
 commit:
 	git add .
-	git commit -m "$(COMMIT)"
+	git commit -m "$m $(COMMIT)"
 
 
 re:		fclean all

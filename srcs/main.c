@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 13:15:20 by loadjou           #+#    #+#             */
-/*   Updated: 2022/12/09 13:03:04 by loadjou          ###   ########.fr       */
+/*   Updated: 2022/12/09 13:12:40 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void* routine(int *i_value)
     return 0;
 }
 */
+
 
 void init_vars(char **argv, t_table *tab)
 {

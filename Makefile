@@ -35,7 +35,7 @@ fclean:	clean
 commit:
 	git add .
 	git commit -m "$m $(COMMIT)"
-	git push
+	git push origin "$b"
 
 
 re:		fclean all

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bylkus <bylkus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 10:56:38 by loadjou           #+#    #+#             */
-/*   Updated: 2022/12/09 12:59:56 by loadjou          ###   ########.fr       */
+/*   Updated: 2022/12/14 13:12:33 by bylkus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ int	only_digits(char **argv)
 	while (argv[i])
 	{
 		j = 0;
-		while (argv[i][j++])
+		while (argv[i][j])
+		{
 			if (!((argv[i][j] >= '0' && argv[i][j] <= '9')
 					|| (argv[i][j] == ' ')))
 				return (0);
+			j++;
+		}
 		i++;
 	}
 	return (1);
@@ -32,9 +35,9 @@ int	only_digits(char **argv)
 
 long	ft_atol(char *str)
 {
-	long i;
-	int sign;
-	long long int result;
+	long			i;
+	int				sign;
+	long long int	result;
 
 	i = 0;
 	sign = 1;
@@ -53,4 +56,27 @@ long	ft_atol(char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+/*
+void	free_double(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		tab[i] = NULL;
+		i++;
+	}
+	free(tab);
+}
+*/
+
+void	ft_exit(void *to_free, char *msg)
+{
+	free(to_free);
+	write(2, &msg, sizeof(msg));
+	exit(0);
 }

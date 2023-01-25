@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 12:01:31 by loadjou            #+#    #+#             */
-/*   Updated: 2023/01/13 13:16:52 by loadjou          ###   ########.fr       */
+/*   Created: 2022/10/02 12:01:31 by hsaadi            #+#    #+#             */
+/*   Updated: 2023/01/25 16:14:47 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 /* *************** ***************           *************** *************** */
 # define ERROR "Error!"
 # define ERRARG "Error! Please check your args"
-# define ERRMAL "Error! Somtehing went wrong while trying to malloc\n"
+# define ERRMAL "Error! Somthing went wrong while trying to malloc\n"
 # define ERRHLP "Error! Please enter just <help> to get help!"
 
 /* ***** MOVES ***** */
@@ -42,26 +42,22 @@
 # define SLEEPING "is sleeping"
 # define SLEEPING1 "is sleeping 1"
 # define THINKING "is thinking"
-# define CHOPSTICK1 "has taken the first chopstick"
+# define CHOPSTICK1 "has taken the  first chopstick"
 # define CHOPSTICK2 "has taken the second chopstick"
-#define DROPCHOPS "has dropped the chopsticks"
 # define DEAD "IS DEAD"
 
-/* Colors Defined*/
-# define DEFAULT "\001\033[0;39m\002"
-# define GRAY "\001\033[0;90m\002"
-# define RED "\001\033[0;91m\002"
-# define GREEN "\001\033[0;92m\002"
-# define YELLOW "\001\033[0;93m\002"
-# define BLUE "\001\033[0;94m\002"
-# define MAGENTA "\001\033[0;95m\002"
-# define CYAN "\001\033[0;96m\002"
-# define WHITE "\001\033[0;97m\002"
+/* ***** COLORS ***** */
+# define RESET "\e[0m"
+# define BBLK "\e[1;30m"
+# define BRED "\e[1;31m"
+# define BGREEN "\e[1;32m"
+# define BYEL "\e[1;33m"
+# define BBLUE "\e[1;34m"
+# define BMAG "\e[1;35m"
+# define BCYAN "\e[1;36m"
+# define BWHT "\e[1;37m"
 
 /* ***** HELP MESSAGE ***** */
-# define TEST "I enter here"
-# define MAXPHIL "Too many philos! Don't try to fu my process\
- I set it to 200\n"
 # define HELP "The number of argments must be 4 or 5:\n\
 - arg1 number_of_philosophers\n\
 - arg2 time_to_die\n\
@@ -96,11 +92,16 @@ typedef struct s_table
 	size_t			time_to_eat;
 	size_t			time_to_sleep;
 	size_t			repeat_time;
+	size_t			stop;
 	size_t			is_philos_dead;
 	time_t			time_begin;
 	pthread_mutex_t	*chopsticks;
 	pthread_mutex_t	writing_lock;
 	pthread_t		maestro;
+	pthread_mutex_t m_repeat_time;
+	pthread_mutex_t m_dead;
+	pthread_mutex_t m_philo_id;
+	pthread_mutex_t m_philo_data;
 	t_philos		*philos;
 }					t_table;
 
@@ -123,11 +124,17 @@ bool				print_output(t_table *table, size_t id, char *color,
 						char *status);
 
 /* ***** MOVES.c ***** */
-bool				eat(t_table *table, size_t i);
-bool				go_to_sleep(t_table *table, size_t i);
-bool				think(t_table *table, size_t i);
-bool				is_philo_dead(t_table *table, size_t i);
-bool				drop_chops(t_table *table, size_t i);
+// bool				eat(t_table *table, size_t i);
+bool	eat(t_table *table, t_philos *philo);
+// bool				go_to_sleep(t_table *table, size_t i);
+bool	go_to_sleep(t_table *table, t_philos *philo);
+// bool				think(t_table *table, size_t i);
+bool	think(t_table *table,t_philos *philo);
+// bool				is_philo_dead(t_table *table, size_t i);
+bool	is_philo_dead(t_table *table, t_philos *philo);
+// bool				drop_chops(t_table *table, size_t i);
+bool	repeat_time(t_table *table);
+bool	drop_chops(t_table *table, t_philos *philo);
 
 /* ***** ROUTINE.c ***** */
 void				*routine(void *args);
@@ -147,3 +154,19 @@ void				create_delay(time_t time);
 void				start_some_delay(time_t start_time);
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+/* Test 5 800 200 200. No philosopher should die.
+Test 5 800 200 200 7. No philosopher should die and the simulation should stop when every philosopher
+has eaten at least 7 times.
+Test 4 410 200 200. No philosopher should die.
+Test 4 310 200 100. One philosopher should die. */

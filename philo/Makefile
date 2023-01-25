@@ -1,58 +1,48 @@
 NAME = philo
 
-SRCS_PATH = src/
-
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -fsanitize=thread -g #-lpthread
-# CFLAGS = -Wall -Werror -Wextra #-lpthread
-RM = rm -rf
+SRC_DIR = src/
+OBJ_DIR = .objs
 
 SRCS_FILES = philo.c init.c check_args.c logs.c utils.c threading.c routine.c moves.c
-# SRCS_FILES = logs.c main.c utils.c routine.c philo.c
 
-SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
+SRCS = $(addprefix $(SRC_DIR), $(SRCS_FILES))
+OBJS = $(SRCS:.c=.o)
 
-OBJS_DIR = bin/
-
-OBJS = $(subst $(SRCS_PATH), $(OBJS_DIR), $(SRCS:.c=.o))
-# $(SRCS:.c=.o)
-
-
-$(OBJS_DIR)%.o :	$(SRCS_PATH)%.c
-			@mkdir -p $(OBJS_DIR)
-			@$(CC) $(CFLAGS) -c $< -o $@
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=thread
+LFLAGS = -pthread -fsanitize=thread
+RM = rm -rf
 
 
-all: 	$(NAME)
-	@echo "$(GREEN)Your program compiled succefully!💥\n$(DEFAULT)"
-
+all: $(NAME)
+#@echo "BOOM 💥💥💥💥💥 $(NAME) Compiled! 💯 $(DEFAULT)"
 
 $(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	@echo "$(NAME) created!$(DEFAULT)💯"
+		@$(CC) $(OBJS) $(CFLAGS) $(LFLAGS) -o $(NAME)
+#@echo "$(GREEN)$(NAME) created!$(DEFAULT)"
+
+bonus:
 	
+
 clean:
-	@$(RM) $(OBJS_DIR)
-	@echo "$(YELLOW)object files deleted!$(DEFAULT)💯"
+		@$(RM) $(OBJS)
+		@echo "$(YELLOW)Object files deleted!$(DEFAULT)💯"
 
-fclean:	clean
-	@$(RM) $(NAME) $(LIBFT)
+fclean: clean
+		@$(RM) $(NAME)
 
-commit:
-	git add .
-	git commit -m "$m $(COMMIT)"
-	git push origin "$b"
+re: fclean all
 
+.PONY: all clean fclean re
 
-re:		fclean all
-
-
-.PHONY:	all clean libft fclean re
-
+git:
+	@git add .
+	@git commit -m "$(message)"
+	@git push
+	@echo "\n$(GREEN)$(message) Committed!$(DEFAULT)💯"
 
 #COLORS
 RED = \033[1;31m
 GREEN = \033[1;32m
 YELLOW = \033[1;33m
-DEFAULT = \033[0m
-COMMIT = $(shell date "+%d %B %T")
+message = "Commit Message By Default On $(shell date "+%d %B %T")"

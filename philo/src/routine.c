@@ -5,69 +5,72 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 12:55:13 by loadjou            #+#    #+#             */
-/*   Updated: 2023/01/13 12:03:00 by loadjou          ###   ########.fr       */
+/*   Created: 2022/10/02 12:55:13 by hsaadi            #+#    #+#             */
+/*   Updated: 2023/01/25 18:09:46 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+/**
+ * @brief The routine each philo should run
+ * 
+ * @param args The address of the struct to use 
+ * @return void* 
+ */
 void	*routine(void *args)
 {
 	t_table	*table;
 	size_t	i;
 
 	table = (t_table *)args;
+	pthread_mutex_lock(&table->m_philo_id);
 	i = table->n_thread;
-	if (table->repeat_time)
+	pthread_mutex_unlock(&table->m_philo_id);
+	// if (i % 2 == 0)
+	// 	usleep(20);
+	while (1)
 	{
-		while (table->philos[i].times_ate && !table->is_philos_dead)
-			run_routine(table, i);
-	}
-	else
-	{
-		while (!table->is_philos_dead)
+		if (!eat(table, &table->philos[i]))
 		{
-			if (!run_routine(table, i))
-				break ;
+			drop_chops(table, &table->philos[i]);
+			return (false);
 		}
+		if (!go_to_sleep(table, &table->philos[i]))
+			return (false);
+		if (!think(table, &table->philos[i]))
+			return (false);
 	}
 	return (NULL);
 }
 
-size_t	run_routine(t_table *table, size_t i)
-{
-	if (!eat(table, i))
-		return (false);
-	if (!go_to_sleep(table, i))
-		return (false);
-	if (!think(table, i))
-		return (false);
-	return (true);
-}
+/**
 
+	* @brief The routine the maestro should run to check if any other philo is dead or should die!
+ * 
+ * @param args The address of the struct to use 
+ * @return void* 
+ */
 void	*maestro_routine(void *args)
 {
 	t_table	*table;
 	size_t	i;
+	size_t	nb_philos;
 
 	table = (t_table *)args;
 	i = 0;
-	if (table->philos[i].times_ate)
+	pthread_mutex_lock(&table->m_philo_data);
+	nb_philos = table->philos_nb;
+	pthread_mutex_unlock(&table->m_philo_data);
+	while (repeat_time(table))
 	{
-		while (table->philos[i].times_ate && !table->is_philos_dead)
-		{
-			if (is_philo_dead(table, i))
-				break ;
-		}
-	}
-	else
-	{
-		while (!table->is_philos_dead)
-		{
-			if (is_philo_dead(table, i))
-				break ;
-		}
+		// if(!repeat_time(table))
+		// 	break;
+		if (i == nb_philos - 1)
+			i = 0;
+		if (is_philo_dead(table, &table->philos[i]))
+			return NULL ;
+		i++;
 	}
 	return (NULL);
 }

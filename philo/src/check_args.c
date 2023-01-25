@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hsaadi <hsaadi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/13 13:36:12 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/17 22:44:29 by loadjou          ###   ########.fr       */
+/*   Created: 2022/10/02 13:22:54 by hsaadi            #+#    #+#             */
+/*   Updated: 2023/01/18 11:56:45 by hsaadi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/philo.h"
 
+/**
+ * @brief Check if arguments are valid (Numbers)
+ * 
+ * @param argv The list of args to check 
+ * @return true  if valid
+ * @return false is not valid
+ */
 bool	args_are_valid(char **argv)
 {
 	int	i;
@@ -26,7 +32,7 @@ bool	args_are_valid(char **argv)
 		{
 			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
 			{
-				printf("%s%s\n", RED, ERRARG);
+				printf("%s%s\n", BRED, ERRARG);
 				return (false);
 			}
 			j++;
@@ -36,17 +42,25 @@ bool	args_are_valid(char **argv)
 	return (true);
 }
 
+/**
+ * @brief Print out the errors 
+ * 
+ * @param table The structure that contains all the table's data
+ * @param argc The number or args received
+ * @return true if all well
+ * @return false if any error
+ */
 bool	print_args_errors(t_table *table, size_t argc)
 {
 	if (!table->philos_nb || !table->ultimatum || !table->time_to_eat
 		|| !table->time_to_sleep)
 	{
-		printf("%s%s\n", RED, ERRARG);
+		printf("%s%s\n", BRED, ERRARG);
 		return (false);
 	}
 	if (argc == 6 && table->repeat_time <= 0)
 	{
-		printf("%s%s\n", RED, ERRARG);
+		printf("%s%s\n", BRED, ERRARG);
 		return (false);
 	}
 	return (true);

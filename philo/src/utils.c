@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loadjou <loadjou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hsaadi <hsaadi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 13:03:21 by loadjou            #+#    #+#             */
-/*   Updated: 2022/12/18 11:12:13 by loadjou           ###   ########.fr       */
+/*   Created: 2022/10/02 13:03:21 by hsaadi            #+#    #+#             */
+/*   Updated: 2023/01/19 16:09:37 by hsaadi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/philo.h"
 
+/**
+ * @brief From an str return a long int 
+ * 
+ * @param st the string to use
+ * @return size_t the long int to return 
+ */
 size_t	ft_atol(const char *str)
 {
 	size_t	i;
@@ -38,6 +43,11 @@ size_t	ft_atol(const char *str)
 	return (num * sign);
 }
 
+/**
+ * @brief Get the time object
+ * 
+ * @return time_t 
+ */
 time_t	get_time(void)
 {
 	struct timeval	time;
@@ -46,6 +56,12 @@ time_t	get_time(void)
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
 }
 
+/**
+ * @brief Calculate a time range from a certain given time
+ * 
+ * @param time The starting time
+ * @return time_t The time range
+ */
 time_t	time_range(time_t time)
 {
 	if (time > 0)
@@ -53,11 +69,29 @@ time_t	time_range(time_t time)
 	return (0);
 }
 
+/**
+ * @brief Create a delay for the specified (time)
+ * @param time The delay
+ */
+// void	create_delay(time_t time)
+// {
+// 	usleep(time * 1000);
+// }
+
 void	create_delay(time_t time)
 {
-	usleep(time * 1000);
+	time_t	delay;
+
+	delay = get_time() + time;
+	while (get_time() < delay)
+		usleep(50);
 }
 
+/**
+ * @brief Sleep for a certain time
+ * 
+ * @param time_to_stop The time to stop
+ */
 void	ft_sleep(long int time_to_stop)
 {
 	long int	delay;

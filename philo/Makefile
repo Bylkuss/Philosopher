@@ -1,35 +1,35 @@
 NAME = philo
 
-SRC_DIR = src/
-OBJ_DIR = .objs
-
-SRCS_FILES = philo.c init.c check_args.c logs.c utils.c threading.c routine.c moves.c
-
-SRCS = $(addprefix $(SRC_DIR), $(SRCS_FILES))
-OBJS = $(SRCS:.c=.o)
-
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g -fsanitize=thread
 LFLAGS = -pthread -fsanitize=thread
 RM = rm -rf
 
+SRCDIR = src/
+OBJDIR = .bin/
+
+SRCS_FILES = src/philo.c src/init.c src/check_args.c src/logs.c src/utils.c src/threading.c src/routine.c src/moves.c
+SRCS = $(addprefix $(SRC_DIR), $(SRCS_FILES))
+OBJS	=	$(patsubst $(SRCDIR)%.c,$(OBJDIR)%.o,$(SRCS))
 
 all: $(NAME)
-#@echo "BOOM 💥💥💥💥💥 $(NAME) Compiled! 💯 $(DEFAULT)"
 
 $(NAME): $(OBJS)
-		@$(CC) $(OBJS) $(CFLAGS) $(LFLAGS) -o $(NAME)
-#@echo "$(GREEN)$(NAME) created!$(DEFAULT)"
+	@$(CC) $(CFLAGS) -o $@ $(OBJS)
+	@echo "$(GREEN)Compiled!$(DEFAULT)💯"
 
-bonus:
-	
+$(OBJS): $(OBJDIR)%.o : $(SRCDIR)%.c $(INC) | $(OBJDIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	@mkdir -p $@
 
 clean:
-		@$(RM) $(OBJS)
-		@echo "$(YELLOW)Object files deleted!$(DEFAULT)💯"
+	@$(RM) $(OBJS)
+	@echo "$(YELLOW)Object files deleted!$(DEFAULT)💯"
 
 fclean: clean
-		@$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

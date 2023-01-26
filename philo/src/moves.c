@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:42 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/26 13:32:07 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/26 16:03:50 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,9 @@ bool	drop_chops(t_table *table, t_philos *philo)
 	// pthread_mutex_unlock(&table->m_repeat_time);
 	if (pthread_mutex_unlock(&table->chopsticks[philo->chops.right]))
 		return (false);
+	printf("%s%-10ld %-3zu %-30s%s\n", BRED, time_range(table->time_begin), philo->id, "Has dropped right chop", RESET);
 	if (pthread_mutex_unlock(&table->chopsticks[philo->chops.left]))
 		return (false);
+	printf("%s%-10ld %-3zu %-30s%s\n", BRED, time_range(table->time_begin), philo->id, "Has dropped left chop", RESET);
 	return (true);
 }

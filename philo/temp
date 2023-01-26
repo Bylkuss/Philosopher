@@ -1,0 +1,664 @@
+[1;34m1          1   has taken the  first chopstick[0m
+[1;34m1          1   has taken the second chopstick[0m
+[1;32m1          1   is eating                     [0m
+[1;34m2          3   has taken the  first chopstick[0m
+[1;34m2          3   has taken the second chopstick[0m
+[1;32m2          3   is eating                     [0m
+[1;34m3          5   has taken the  first chopstick[0m
+[1;34m3          5   has taken the second chopstick[0m
+[1;32m3          5   is eating                     [0m
+[1;34m4          7   has taken the  first chopstick[0m
+[1;34m4          7   has taken the second chopstick[0m
+[1;32m4          7   is eating                     [0m
+[1;34m5          9   has taken the  first chopstick[0m
+[1;34m5          9   has taken the second chopstick[0m
+[1;32m5          9   is eating                     [0m
+[1;34m6          11  has taken the  first chopstick[0m
+[1;34m6          11  has taken the second chopstick[0m
+[1;32m6          11  is eating                     [0m
+[1;34m7          13  has taken the  first chopstick[0m
+[1;34m7          13  has taken the second chopstick[0m
+[1;32m7          13  is eating                     [0m
+[1;34m7          15  has taken the  first chopstick[0m
+[1;34m7          15  has taken the second chopstick[0m
+[1;32m7          15  is eating                     [0m
+[1;34m8          17  has taken the  first chopstick[0m
+[1;34m8          17  has taken the second chopstick[0m
+[1;32m8          17  is eating                     [0m
+[1;34m9          19  has taken the  first chopstick[0m
+[1;34m9          19  has taken the second chopstick[0m
+[1;32m9          19  is eating                     [0m
+[1;34m10         21  has taken the  first chopstick[0m
+[1;34m10         21  has taken the second chopstick[0m
+[1;32m10         21  is eating                     [0m
+[1;34m11         23  has taken the  first chopstick[0m
+[1;34m11         23  has taken the second chopstick[0m
+[1;32m11         23  is eating                     [0m
+[1;34m12         25  has taken the  first chopstick[0m
+[1;34m12         25  has taken the second chopstick[0m
+[1;32m12         25  is eating                     [0m
+[1;34m13         27  has taken the  first chopstick[0m
+[1;34m13         27  has taken the second chopstick[0m
+[1;32m13         27  is eating                     [0m
+[1;34m14         29  has taken the  first chopstick[0m
+[1;34m14         29  has taken the second chopstick[0m
+[1;32m14         29  is eating                     [0m
+[1;34m15         31  has taken the  first chopstick[0m
+[1;34m15         31  has taken the second chopstick[0m
+[1;32m15         31  is eating                     [0m
+[1;34m16         33  has taken the  first chopstick[0m
+[1;34m16         33  has taken the second chopstick[0m
+[1;32m16         33  is eating                     [0m
+[1;34m17         35  has taken the  first chopstick[0m
+[1;34m17         35  has taken the second chopstick[0m
+[1;32m17         35  is eating                     [0m
+[1;34m18         37  has taken the  first chopstick[0m
+[1;34m18         37  has taken the second chopstick[0m
+[1;32m18         37  is eating                     [0m
+[1;34m19         39  has taken the  first chopstick[0m
+[1;34m19         39  has taken the second chopstick[0m
+[1;32m19         39  is eating                     [0m
+[1;34m20         41  has taken the  first chopstick[0m
+[1;34m20         41  has taken the second chopstick[0m
+[1;32m20         41  is eating                     [0m
+[1;34m21         43  has taken the  first chopstick[0m
+[1;34m21         43  has taken the second chopstick[0m
+[1;32m21         43  is eating                     [0m
+[1;34m22         45  has taken the  first chopstick[0m
+[1;34m22         45  has taken the second chopstick[0m
+[1;32m22         45  is eating                     [0m
+[1;34m23         47  has taken the  first chopstick[0m
+[1;34m23         47  has taken the second chopstick[0m
+[1;32m23         47  is eating                     [0m
+[1;34m24         49  has taken the  first chopstick[0m
+[1;34m24         49  has taken the second chopstick[0m
+[1;32m24         49  is eating                     [0m
+[1;34m25         51  has taken the  first chopstick[0m
+[1;34m25         51  has taken the second chopstick[0m
+[1;32m25         51  is eating                     [0m
+[1;34m26         53  has taken the  first chopstick[0m
+[1;34m26         53  has taken the second chopstick[0m
+[1;32m26         53  is eating                     [0m
+[1;34m27         55  has taken the  first chopstick[0m
+[1;34m27         55  has taken the second chopstick[0m
+[1;32m27         55  is eating                     [0m
+[1;34m28         57  has taken the  first chopstick[0m
+[1;34m28         57  has taken the second chopstick[0m
+[1;32m28         57  is eating                     [0m
+[1;34m29         59  has taken the  first chopstick[0m
+[1;34m29         59  has taken the second chopstick[0m
+[1;32m29         59  is eating                     [0m
+[1;34m30         61  has taken the  first chopstick[0m
+[1;34m30         61  has taken the second chopstick[0m
+[1;32m30         61  is eating                     [0m
+[1;34m32         63  has taken the  first chopstick[0m
+[1;34m32         63  has taken the second chopstick[0m
+[1;32m32         63  is eating                     [0m
+[1;34m33         65  has taken the  first chopstick[0m
+[1;34m33         65  has taken the second chopstick[0m
+[1;32m33         65  is eating                     [0m
+[1;34m34         67  has taken the  first chopstick[0m
+[1;34m34         67  has taken the second chopstick[0m
+[1;32m34         67  is eating                     [0m
+[1;34m35         69  has taken the  first chopstick[0m
+[1;34m35         69  has taken the second chopstick[0m
+[1;32m35         69  is eating                     [0m
+[1;34m36         71  has taken the  first chopstick[0m
+[1;34m36         71  has taken the second chopstick[0m
+[1;32m36         71  is eating                     [0m
+[1;34m37         73  has taken the  first chopstick[0m
+[1;34m37         73  has taken the second chopstick[0m
+[1;32m37         73  is eating                     [0m
+[1;34m38         75  has taken the  first chopstick[0m
+[1;34m38         75  has taken the second chopstick[0m
+[1;32m38         75  is eating                     [0m
+[1;34m39         77  has taken the  first chopstick[0m
+[1;34m39         77  has taken the second chopstick[0m
+[1;32m39         77  is eating                     [0m
+[1;34m40         79  has taken the  first chopstick[0m
+[1;34m40         79  has taken the second chopstick[0m
+[1;32m40         79  is eating                     [0m
+[1;34m41         81  has taken the  first chopstick[0m
+[1;34m41         81  has taken the second chopstick[0m
+[1;32m41         81  is eating                     [0m
+[1;34m42         83  has taken the  first chopstick[0m
+[1;34m42         83  has taken the second chopstick[0m
+[1;32m42         83  is eating                     [0m
+[1;34m44         85  has taken the  first chopstick[0m
+[1;34m44         85  has taken the second chopstick[0m
+[1;32m44         85  is eating                     [0m
+[1;34m45         87  has taken the  first chopstick[0m
+[1;34m45         87  has taken the second chopstick[0m
+[1;32m45         87  is eating                     [0m
+[1;34m46         89  has taken the  first chopstick[0m
+[1;34m46         89  has taken the second chopstick[0m
+[1;32m46         89  is eating                     [0m
+[1;34m47         91  has taken the  first chopstick[0m
+[1;34m47         91  has taken the second chopstick[0m
+[1;32m47         91  is eating                     [0m
+[1;34m48         93  has taken the  first chopstick[0m
+[1;34m48         93  has taken the second chopstick[0m
+[1;32m48         93  is eating                     [0m
+[1;34m50         95  has taken the  first chopstick[0m
+[1;34m50         95  has taken the second chopstick[0m
+[1;32m50         95  is eating                     [0m
+[1;34m51         97  has taken the  first chopstick[0m
+[1;34m51         97  has taken the second chopstick[0m
+[1;32m51         97  is eating                     [0m
+[1;34m52         99  has taken the  first chopstick[0m
+[1;34m52         99  has taken the second chopstick[0m
+[1;32m52         99  is eating                     [0m
+[1;34m53         101 has taken the  first chopstick[0m
+[1;34m53         101 has taken the second chopstick[0m
+[1;32m53         101 is eating                     [0m
+[1;34m54         103 has taken the  first chopstick[0m
+[1;34m54         103 has taken the second chopstick[0m
+[1;32m54         103 is eating                     [0m
+[1;34m56         105 has taken the  first chopstick[0m
+[1;34m56         105 has taken the second chopstick[0m
+[1;32m56         105 is eating                     [0m
+[1;34m57         107 has taken the  first chopstick[0m
+[1;34m57         107 has taken the second chopstick[0m
+[1;32m57         107 is eating                     [0m
+[1;34m58         109 has taken the  first chopstick[0m
+[1;34m58         109 has taken the second chopstick[0m
+[1;32m58         109 is eating                     [0m
+[1;34m59         111 has taken the  first chopstick[0m
+[1;34m59         111 has taken the second chopstick[0m
+[1;32m59         111 is eating                     [0m
+[1;34m60         113 has taken the  first chopstick[0m
+[1;34m60         113 has taken the second chopstick[0m
+[1;32m60         113 is eating                     [0m
+[1;34m61         115 has taken the  first chopstick[0m
+[1;34m61         115 has taken the second chopstick[0m
+[1;32m61         115 is eating                     [0m
+[1;34m63         117 has taken the  first chopstick[0m
+[1;34m63         117 has taken the second chopstick[0m
+[1;32m63         117 is eating                     [0m
+[1;34m64         119 has taken the  first chopstick[0m
+[1;34m64         119 has taken the second chopstick[0m
+[1;32m64         119 is eating                     [0m
+[1;34m65         121 has taken the  first chopstick[0m
+[1;34m65         121 has taken the second chopstick[0m
+[1;32m65         121 is eating                     [0m
+[1;34m66         123 has taken the  first chopstick[0m
+[1;34m66         123 has taken the second chopstick[0m
+[1;32m66         123 is eating                     [0m
+[1;34m67         125 has taken the  first chopstick[0m
+[1;34m67         125 has taken the second chopstick[0m
+[1;32m67         125 is eating                     [0m
+[1;34m69         127 has taken the  first chopstick[0m
+[1;34m69         127 has taken the second chopstick[0m
+[1;32m69         127 is eating                     [0m
+[1;34m70         129 has taken the  first chopstick[0m
+[1;34m70         129 has taken the second chopstick[0m
+[1;32m70         129 is eating                     [0m
+[1;34m71         131 has taken the  first chopstick[0m
+[1;34m71         131 has taken the second chopstick[0m
+[1;32m71         131 is eating                     [0m
+[1;34m72         133 has taken the  first chopstick[0m
+[1;34m72         133 has taken the second chopstick[0m
+[1;32m72         133 is eating                     [0m
+[1;34m74         135 has taken the  first chopstick[0m
+[1;34m74         135 has taken the second chopstick[0m
+[1;32m74         135 is eating                     [0m
+[1;34m75         137 has taken the  first chopstick[0m
+[1;34m75         137 has taken the second chopstick[0m
+[1;32m75         137 is eating                     [0m
+[1;34m76         139 has taken the  first chopstick[0m
+[1;34m76         139 has taken the second chopstick[0m
+[1;32m76         139 is eating                     [0m
+[1;34m77         141 has taken the  first chopstick[0m
+[1;34m77         141 has taken the second chopstick[0m
+[1;32m77         141 is eating                     [0m
+[1;34m78         143 has taken the  first chopstick[0m
+[1;34m78         143 has taken the second chopstick[0m
+[1;32m78         143 is eating                     [0m
+[1;34m79         145 has taken the  first chopstick[0m
+[1;34m79         145 has taken the second chopstick[0m
+[1;32m79         145 is eating                     [0m
+[1;34m81         147 has taken the  first chopstick[0m
+[1;34m81         147 has taken the second chopstick[0m
+[1;32m81         147 is eating                     [0m
+[1;34m82         149 has taken the  first chopstick[0m
+[1;34m82         149 has taken the second chopstick[0m
+[1;32m82         149 is eating                     [0m
+[1;34m83         151 has taken the  first chopstick[0m
+[1;34m83         151 has taken the second chopstick[0m
+[1;32m83         151 is eating                     [0m
+[1;34m84         153 has taken the  first chopstick[0m
+[1;34m84         153 has taken the second chopstick[0m
+[1;32m84         153 is eating                     [0m
+[1;34m85         155 has taken the  first chopstick[0m
+[1;34m85         155 has taken the second chopstick[0m
+[1;32m85         155 is eating                     [0m
+[1;34m87         157 has taken the  first chopstick[0m
+[1;34m87         157 has taken the second chopstick[0m
+[1;32m87         157 is eating                     [0m
+[1;34m88         159 has taken the  first chopstick[0m
+[1;34m88         159 has taken the second chopstick[0m
+[1;32m88         159 is eating                     [0m
+[1;34m89         161 has taken the  first chopstick[0m
+[1;34m89         161 has taken the second chopstick[0m
+[1;32m89         161 is eating                     [0m
+[1;34m90         163 has taken the  first chopstick[0m
+[1;34m90         163 has taken the second chopstick[0m
+[1;32m90         163 is eating                     [0m
+[1;34m91         165 has taken the  first chopstick[0m
+[1;34m91         165 has taken the second chopstick[0m
+[1;32m91         165 is eating                     [0m
+[1;34m92         167 has taken the  first chopstick[0m
+[1;34m92         167 has taken the second chopstick[0m
+[1;32m92         167 is eating                     [0m
+[1;34m94         169 has taken the  first chopstick[0m
+[1;34m94         169 has taken the second chopstick[0m
+[1;32m94         169 is eating                     [0m
+[1;34m95         171 has taken the  first chopstick[0m
+[1;34m95         171 has taken the second chopstick[0m
+[1;32m95         171 is eating                     [0m
+[1;34m96         173 has taken the  first chopstick[0m
+[1;34m96         173 has taken the second chopstick[0m
+[1;32m96         173 is eating                     [0m
+[1;34m97         175 has taken the  first chopstick[0m
+[1;34m97         175 has taken the second chopstick[0m
+[1;32m97         175 is eating                     [0m
+[1;34m98         177 has taken the  first chopstick[0m
+[1;34m98         177 has taken the second chopstick[0m
+[1;32m98         177 is eating                     [0m
+[1;34m99         179 has taken the  first chopstick[0m
+[1;34m99         179 has taken the second chopstick[0m
+[1;32m99         179 is eating                     [0m
+[1;34m101        181 has taken the  first chopstick[0m
+[1;34m101        181 has taken the second chopstick[0m
+[1;32m101        181 is eating                     [0m
+[1;34m102        183 has taken the  first chopstick[0m
+[1;34m102        183 has taken the second chopstick[0m
+[1;32m102        183 is eating                     [0m
+[1;34m103        185 has taken the  first chopstick[0m
+[1;34m103        185 has taken the second chopstick[0m
+[1;32m103        185 is eating                     [0m
+[1;34m104        187 has taken the  first chopstick[0m
+[1;34m104        187 has taken the second chopstick[0m
+[1;32m104        187 is eating                     [0m
+[1;34m105        189 has taken the  first chopstick[0m
+[1;34m105        189 has taken the second chopstick[0m
+[1;32m105        189 is eating                     [0m
+[1;34m106        191 has taken the  first chopstick[0m
+[1;34m106        191 has taken the second chopstick[0m
+[1;32m106        191 is eating                     [0m
+[1;34m107        193 has taken the  first chopstick[0m
+[1;34m107        193 has taken the second chopstick[0m
+[1;32m107        193 is eating                     [0m
+[1;34m109        195 has taken the  first chopstick[0m
+[1;34m109        195 has taken the second chopstick[0m
+[1;32m109        195 is eating                     [0m
+[1;34m110        197 has taken the  first chopstick[0m
+[1;34m110        197 has taken the second chopstick[0m
+[1;32m110        197 is eating                     [0m
+[1;34m111        199 has taken the  first chopstick[0m
+[1;34m111        199 has taken the second chopstick[0m
+[1;32m111        199 is eating                     [0m
+[1;33m208        17  is sleeping                   [0m
+[1;34m208        18  has taken the  first chopstick[0m
+[1;33m209        19  is sleeping                   [0m
+[1;34m209        18  has taken the second chopstick[0m
+[1;34m209        20  has taken the  first chopstick[0m
+[1;32m209        18  is eating                     [0m
+[1;33m212        25  is sleeping                   [0m
+[1;34m212        26  has taken the  first chopstick[0m
+[1;33m213        27  is sleeping                   [0m
+[1;34m213        26  has taken the second chopstick[0m
+[1;34m213        28  has taken the  first chopstick[0m
+[1;32m213        26  is eating                     [0m
+[1;33m220        41  is sleeping                   [0m
+[1;34m220        42  has taken the  first chopstick[0m
+[1;33m221        43  is sleeping                   [0m
+[1;34m221        42  has taken the second chopstick[0m
+[1;34m221        44  has taken the  first chopstick[0m
+[1;32m221        42  is eating                     [0m
+[1;33m223        47  is sleeping                   [0m
+[1;34m223        48  has taken the  first chopstick[0m
+[1;33m226        53  is sleeping                   [0m
+[1;34m226        54  has taken the  first chopstick[0m
+[1;33m234        67  is sleeping                   [0m
+[1;34m234        68  has taken the  first chopstick[0m
+[1;33m242        49  is sleeping                   [0m
+[1;34m242        48  has taken the second chopstick[0m
+[1;34m242        50  has taken the  first chopstick[0m
+[1;32m243        48  is eating                     [0m
+[1;33m250        95  is sleeping                   [0m
+[1;34m250        96  has taken the  first chopstick[0m
+[1;33m252        99  is sleeping                   [0m
+[1;34m252        100 has taken the  first chopstick[0m
+[1;33m254        75  is sleeping                   [0m
+[1;34m254        76  has taken the  first chopstick[0m
+[1;33m258        109 is sleeping                   [0m
+[1;34m258        110 has taken the  first chopstick[0m
+[1;33m263        81  is sleeping                   [0m
+[1;34m263        82  has taken the  first chopstick[0m
+[1;33m265        121 is sleeping                   [0m
+[1;34m265        122 has taken the  first chopstick[0m
+[1;33m270        129 is sleeping                   [0m
+[1;34m270        130 has taken the  first chopstick[0m
+[1;33m271        131 is sleeping                   [0m
+[1;34m271        130 has taken the second chopstick[0m
+[1;34m271        132 has taken the  first chopstick[0m
+[1;32m271        130 is eating                     [0m
+[1;33m277        141 is sleeping                   [0m
+[1;34m277        142 has taken the  first chopstick[0m
+[1;33m278        143 is sleeping                   [0m
+[1;34m278        142 has taken the second chopstick[0m
+[1;32m278        142 is eating                     [0m
+[1;34m278        144 has taken the  first chopstick[0m
+[1;33m283        151 is sleeping                   [0m
+[1;34m283        152 has taken the  first chopstick[0m
+[1;34m284        152 has taken the second chopstick[0m
+[1;33m284        153 is sleeping                   [0m
+[1;32m284        152 is eating                     [0m
+[1;34m284        154 has taken the  first chopstick[0m
+[1;33m285        155 is sleeping                   [0m
+[1;34m285        154 has taken the second chopstick[0m
+[1;32m285        154 is eating                     [0m
+[1;34m285        156 has taken the  first chopstick[0m
+[1;33m287        157 is sleeping                   [0m
+[1;34m287        158 has taken the  first chopstick[0m
+[1;34m287        156 has taken the second chopstick[0m
+[1;32m287        156 is eating                     [0m
+[1;33m288        159 is sleeping                   [0m
+[1;34m288        160 has taken the  first chopstick[0m
+[1;34m288        158 has taken the second chopstick[0m
+[1;32m288        158 is eating                     [0m
+[1;33m292        167 is sleeping                   [0m
+[1;34m292        168 has taken the  first chopstick[0m
+[1;33m295        171 is sleeping                   [0m
+[1;34m295        172 has taken the  first chopstick[0m
+[1;33m297        175 is sleeping                   [0m
+[1;34m297        176 has taken the  first chopstick[0m
+[1;33m299        179 is sleeping                   [0m
+[1;34m299        180 has taken the  first chopstick[0m
+[1;33m301        181 is sleeping                   [0m
+[1;34m301        180 has taken the second chopstick[0m
+[1;34m301        182 has taken the  first chopstick[0m
+[1;32m301        180 is eating                     [0m
+[1;33m305        189 is sleeping                   [0m
+[1;34m305        190 has taken the  first chopstick[0m
+[1;33m307        193 is sleeping                   [0m
+[1;34m307        194 has taken the  first chopstick[0m
+[1;33m309        195 is sleeping                   [0m
+[1;34m309        194 has taken the second chopstick[0m
+[1;34m309        196 has taken the  first chopstick[0m
+[1;32m309        194 is eating                     [0m
+[1;34m310        198 has taken the  first chopstick[0m
+[1;33m310        197 is sleeping                   [0m
+[1;34m310        196 has taken the second chopstick[0m
+[1;32m310        196 is eating                     [0m
+[1;33m311        199 is sleeping                   [0m
+[1;34m311        200 has taken the  first chopstick[0m
+[1;34m311        198 has taken the second chopstick[0m
+[1;32m311        198 is eating                     [0m
+[1;33m323        57  is sleeping                   [0m
+[1;34m323        58  has taken the  first chopstick[0m
+[1;33m344        31  is sleeping                   [0m
+[1;34m344        32  has taken the  first chopstick[0m
+[1;33m357        117 is sleeping                   [0m
+[1;34m357        118 has taken the  first chopstick[0m
+[1;33m397        187 is sleeping                   [0m
+[1;34m397        188 has taken the  first chopstick[0m
+[1;34m397        184 has taken the  first chopstick[0m
+[1;34m397        188 has taken the second chopstick[0m
+[1;33m397        183 is sleeping                   [0m
+[1;34m397        182 has taken the second chopstick[0m
+[1;32m397        188 is eating                     [0m
+[1;32m397        182 is eating                     [0m
+[1;35m413        27  is thinking                   [0m
+[1;33m413        26  is sleeping                   [0m
+[1;34m413        27  has taken the  first chopstick[0m
+[1;35m420        41  is thinking                   [0m
+[1;34m420        41  has taken the  first chopstick[0m
+[1;35m421        43  is thinking                   [0m
+[1;35m423        47  is thinking                   [0m
+[1;34m423        47  has taken the  first chopstick[0m
+[1;35m426        53  is thinking                   [0m
+[1;34m426        53  has taken the  first chopstick[0m
+[1;33m429        35  is sleeping                   [0m
+[1;34m429        36  has taken the  first chopstick[0m
+[1;33m432        145 is sleeping                   [0m
+[1;34m432        146 has taken the  first chopstick[0m
+[1;34m432        144 has taken the second chopstick[0m
+[1;32m432        144 is eating                     [0m
+[1;35m434        67  is thinking                   [0m
+[1;34m434        67  has taken the  first chopstick[0m
+[1;35m440        25  is thinking                   [0m
+[1;34m440        25  has taken the  first chopstick[0m
+[1;34m440        25  has taken the second chopstick[0m
+[1;32m440        25  is eating                     [0m
+[1;35m440        17  is thinking                   [0m
+[1;34m440        17  has taken the  first chopstick[0m
+[1;35m442        49  is thinking                   [0m
+[1;34m443        49  has taken the  first chopstick[0m
+[1;34m443        47  has taken the second chopstick[0m
+[1;33m443        48  is sleeping                   [0m
+[1;32m443        47  is eating                     [0m
+[1;33m448        73  is sleeping                   [0m
+[1;34m448        74  has taken the  first chopstick[0m
+[1;34m448        74  has taken the second chopstick[0m
+[1;32m448        74  is eating                     [0m
+[1;35m450        95  is thinking                   [0m
+[1;34m450        95  has taken the  first chopstick[0m
+[1;35m452        99  is thinking                   [0m
+[1;34m452        99  has taken the  first chopstick[0m
+[1;35m458        109 is thinking                   [0m
+[1;34m458        109 has taken the  first chopstick[0m
+[1;35m463        81  is thinking                   [0m
+[1;34m463        81  has taken the  first chopstick[0m
+[1;35m465        121 is thinking                   [0m
+[1;34m465        121 has taken the  first chopstick[0m
+[1;33m465        111 is sleeping                   [0m
+[1;34m465        112 has taken the  first chopstick[0m
+[1;34m465        110 has taken the second chopstick[0m
+[1;32m465        110 is eating                     [0m
+[1;33m469        163 is sleeping                   [0m
+[1;33m469        147 is sleeping                   [0m
+[1;34m469        146 has taken the second chopstick[0m
+[1;34m469        148 has taken the  first chopstick[0m
+[1;34m469        164 has taken the  first chopstick[0m
+[1;32m469        146 is eating                     [0m
+[1;35m470        129 is thinking                   [0m
+[1;34m470        129 has taken the  first chopstick[0m
+[1;33m471        130 is sleeping                   [0m
+[1;34m471        129 has taken the second chopstick[0m
+[1;32m471        129 is eating                     [0m
+[1;35m478        143 is thinking                   [0m
+[1;33m478        142 is sleeping                   [0m
+[1;34m478        143 has taken the  first chopstick[0m
+[1;35m483        151 is thinking                   [0m
+[1;34m483        151 has taken the  first chopstick[0m
+[1;35m484        153 is thinking                   [0m
+[1;33m484        18  is sleeping                   [0m
+[1;34m484        17  has taken the second chopstick[0m
+[1;32m484        17  is eating                     [0m
+[1;33m485        154 is sleeping                   [0m
+[1;33m486        13  is sleeping                   [0m
+[1;34m486        14  has taken the  first chopstick[0m
+[1;35m487        157 is thinking                   [0m
+[1;35m488        159 is thinking                   [0m
+[1;35m492        167 is thinking                   [0m
+[1;34m492        167 has taken the  first chopstick[0m
+[1;33m492        83  is sleeping                   [0m
+[1;34m492        82  has taken the second chopstick[0m
+[1;32m492        82  is eating                     [0m
+[1;34m492        84  has taken the  first chopstick[0m
+[1;35m494        75  is thinking                   [0m
+[1;35m495        171 is thinking                   [0m
+[1;34m495        171 has taken the  first chopstick[0m
+[1;35m497        175 is thinking                   [0m
+[1;34m497        175 has taken the  first chopstick[0m
+[1;35m499        179 is thinking                   [0m
+[1;34m499        179 has taken the  first chopstick[0m
+[1;33m500        69  is sleeping                   [0m
+[1;34m500        70  has taken the  first chopstick[0m
+[1;34m500        68  has taken the second chopstick[0m
+[1;32m500        68  is eating                     [0m
+[1;33m501        180 is sleeping                   [0m
+[1;35m501        181 is thinking                   [0m
+[1;34m501        179 has taken the second chopstick[0m
+[1;32m501        179 is eating                     [0m
+[1;34m501        181 has taken the  first chopstick[0m
+[1;35m505        189 is thinking                   [0m
+[1;35m509        195 is thinking                   [0m
+[1;33m509        1   is sleeping                   [0m
+[1;34m509        2   has taken the  first chopstick[0m
+[1;34m509        200 has taken the second chopstick[0m
+[1;32m509        200 is eating                     [0m
+[1;35m511        199 is thinking                   [0m
+[1;33m511        198 is sleeping                   [0m
+[1;34m511        199 has taken the  first chopstick[0m
+[1;35m523        57  is thinking                   [0m
+[1;34m523        57  has taken the  first chopstick[0m
+[1;35m544        31  is thinking                   [0m
+[1;34m544        31  has taken the  first chopstick[0m
+[1;33m545        149 is sleeping                   [0m
+[1;34m545        150 has taken the  first chopstick[0m
+[1;34m545        148 has taken the second chopstick[0m
+[1;32m545        148 is eating                     [0m
+[1;33m547        45  is sleeping                   [0m
+[1;33m547        152 is sleeping                   [0m
+[1;34m547        46  has taken the  first chopstick[0m
+[1;34m547        44  has taken the second chopstick[0m
+[1;34m547        153 has taken the  first chopstick[0m
+[1;34m547        151 has taken the second chopstick[0m
+[1;32m547        44  is eating                     [0m
+[1;34m547        153 has taken the second chopstick[0m
+[1;32m547        151 is eating                     [0m
+[1;32m547        153 is eating                     [0m
+[1;35m557        117 is thinking                   [0m
+[1;34m557        117 has taken the  first chopstick[0m
+[1;33m557        158 is sleeping                   [0m
+[1;34m557        159 has taken the  first chopstick[0m
+[1;33m572        79  is sleeping                   [0m
+[1;34m572        80  has taken the  first chopstick[0m
+[1;35m577        155 is thinking                   [0m
+[1;34m577        155 has taken the  first chopstick[0m
+[1;33m583        123 is sleeping                   [0m
+[1;34m583        124 has taken the  first chopstick[0m
+[1;34m583        122 has taken the second chopstick[0m
+[1;32m583        122 is eating                     [0m
+[1;35m597        187 is thinking                   [0m
+[1;34m597        187 has taken the  first chopstick[0m
+[1;35m597        183 is thinking                   [0m
+[1;34m597        181 has taken the second chopstick[0m
+[1;33m597        182 is sleeping                   [0m
+[1;34m597        183 has taken the  first chopstick[0m
+[1;33m597        188 is sleeping                   [0m
+[1;34m597        187 has taken the second chopstick[0m
+[1;32m597        181 is eating                     [0m
+[1;34m597        189 has taken the  first chopstick[0m
+[1;32m597        187 is eating                     [0m
+[1;33m602        137 is sleeping                   [0m
+[1;34m602        138 has taken the  first chopstick[0m
+[1;33m609        165 is sleeping                   [0m
+[1;34m609        164 has taken the second chopstick[0m
+[1;34m609        166 has taken the  first chopstick[0m
+[1;32m609        164 is eating                     [0m
+[1;35m613        26  is thinking                   [0m
+[1;33m617        55  is sleeping                   [0m
+[1;34m617        54  has taken the second chopstick[0m
+[1;32m617        54  is eating                     [0m
+[1;34m617        56  has taken the  first chopstick[0m
+[1;35m629        35  is thinking                   [0m
+[1;34m629        35  has taken the  first chopstick[0m
+[1;35m632        145 is thinking                   [0m
+[1;33m632        144 is sleeping                   [0m
+[1;34m632        143 has taken the second chopstick[0m
+[1;34m632        145 has taken the  first chopstick[0m
+[1;32m632        143 is eating                     [0m
+[1;33m640        25  is sleeping                   [0m
+[1;34m640        26  has taken the  first chopstick[0m
+[1;33m643        47  is sleeping                   [0m
+[1;34m643        46  has taken the second chopstick[0m
+[1;32m643        46  is eating                     [0m
+[1;33m648        74  is sleeping                   [0m
+[1;34m648        75  has taken the  first chopstick[0m
+[1;35m665        111 is thinking                   [0m
+[1;35m669        147 is thinking                   [0m
+[1;35m669        163 is thinking                   [0m
+[1;33m669        146 is sleeping                   [0m
+[1;34m669        145 has taken the second chopstick[0m
+[1;34m669        163 has taken the  first chopstick[0m
+[1;34m669        147 has taken the  first chopstick[0m
+[1;32m669        145 is eating                     [0m
+[1;33m671        129 is sleeping                   [0m
+[1;35m671        130 is thinking                   [0m
+[1;34m671        130 has taken the  first chopstick[0m
+[1;34m671        130 has taken the second chopstick[0m
+[1;32m671        130 is eating                     [0m
+[1;35m678        142 is thinking                   [0m
+[1;34m678        142 has taken the  first chopstick[0m
+[1;33m678        11  is sleeping                   [0m
+[1;34m678        12  has taken the  first chopstick[0m
+[1;34m678        12  has taken the second chopstick[0m
+[1;32m678        12  is eating                     [0m
+[1;33m681        37  is sleeping                   [0m
+[1;34m681        38  has taken the  first chopstick[0m
+[1;34m681        36  has taken the second chopstick[0m
+[1;32m681        36  is eating                     [0m
+[1;33m683        105 is sleeping                   [0m
+[1;34m683        106 has taken the  first chopstick[0m
+[1;35m686        13  is thinking                   [0m
+[1;33m686        77  is sleeping                   [0m
+[1;34m686        78  has taken the  first chopstick[0m
+[1;34m687        76  has taken the second chopstick[0m
+[1;34m687        78  has taken the second chopstick[0m
+[1;32m687        76  is eating                     [0m
+[1;32m687        78  is eating                     [0m
+[1;35m700        69  is thinking                   [0m
+[1;33m701        179 is sleeping                   [0m
+[1;35m701        180 is thinking                   [0m
+[1;34m701        180 has taken the  first chopstick[0m
+[1;35m709        1   is thinking                   [0m
+[1;35m711        198 is thinking                   [0m
+[1;34m711        198 has taken the  first chopstick[0m
+[1;33m727        97  is sleeping                   [0m
+[1;34m727        98  has taken the  first chopstick[0m
+[1;34m727        96  has taken the second chopstick[0m
+[1;32m727        96  is eating                     [0m
+[1;33m739        156 is sleeping                   [0m
+[1;34m739        157 has taken the  first chopstick[0m
+[1;34m739        155 has taken the second chopstick[0m
+[1;34m739        157 has taken the second chopstick[0m
+[1;32m739        155 is eating                     [0m
+[1;32m739        157 is eating                     [0m
+[1;34m745        147 has taken the second chopstick[0m
+[1;32m745        147 is eating                     [0m
+[1;33m745        148 is sleeping                   [0m
+[1;35m745        149 is thinking                   [0m
+[1;34m745        149 has taken the  first chopstick[0m
+[1;33m746        39  is sleeping                   [0m
+[1;34m746        38  has taken the second chopstick[0m
+[1;32m746        38  is eating                     [0m
+[1;34m746        40  has taken the  first chopstick[0m
+[1;35m747        152 is thinking                   [0m
+[1;34m747        152 has taken the  first chopstick[0m
+[1;33m747        151 is sleeping                   [0m
+[1;34m747        150 has taken the second chopstick[0m
+[1;32m747        150 is eating                     [0m
+[1;33m747        44  is sleeping                   [0m
+[1;33m748        153 is sleeping                   [0m
+[1;34m748        152 has taken the second chopstick[0m
+[1;32m748        152 is eating                     [0m
+[1;35m757        158 is thinking                   [0m
+[1;35m772        79  is thinking                   [0m
+[1;33m783        122 is sleeping                   [0m
+[1;34m783        121 has taken the second chopstick[0m
+[1;32m783        121 is eating                     [0m
+[1;33m786        107 is sleeping                   [0m
+[1;34m786        108 has taken the  first chopstick[0m
+[1;34m786        106 has taken the second chopstick[0m
+[1;32m786        106 is eating                     [0m
+[1;33m794        87  is sleeping                   [0m
+[1;34m794        88  has taken the  first chopstick[0m
+[1;33m797        181 is sleeping                   [0m
+[1;34m797        180 has taken the second chopstick[0m
+[1;33m797        187 is sleeping                   [0m
+[1;32m797        180 is eating                     [0m
+[1;31m800        184 IS DEAD                       [0m

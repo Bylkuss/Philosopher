@@ -25,7 +25,7 @@ $(OBJDIR):
 	@mkdir -p $@
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJDIR)
 	@echo "$(YELLOW)Object files deleted!$(DEFAULT)💯"
 
 fclean: clean
@@ -35,14 +35,15 @@ re: fclean all
 
 .PONY: all clean fclean re
 
-git:
+commit:
 	@git add .
-	@git commit -m "$(message)"
-	@git push
+	@git commit -m "$m $(COMMIT)"
+	@git push origin "$b"
 	@echo "\n$(GREEN)$(message) Committed!$(DEFAULT)💯"
 
 #COLORS
 RED = \033[1;31m
 GREEN = \033[1;32m
 YELLOW = \033[1;33m
-message = "Commit Message By Default On $(shell date "+%d %B %T")"
+DEFAULT = \033[0m
+COMMIT = $(shell date "+%d %B %T")

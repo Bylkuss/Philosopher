@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:01:31 by hsaadi            #+#    #+#             */
-/*   Updated: 2023/01/25 16:14:47 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/26 12:56:02 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ typedef struct s_philos
 	size_t			time_to_die;
 	t_chopstick		chops;
 	struct s_table	*table;
+	pthread_mutex_t m_last_time_eat;
+	size_t last_time_eat;
 }					t_philos;
 
 typedef struct s_table

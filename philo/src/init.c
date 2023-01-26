@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:32 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:13:34 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/26 13:19:07 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,14 @@ static bool	init_philos(t_table **table)
 		return (msg_error(ERRMAL));
 	while (i < (*table)->philos_nb)
 	{
+		(*table)->philos[i].table =(*table);
+		(*table)->philos[i].last_time_eat = -1;
+		
+		if (pthread_mutex_init(&(*table)->philos[i].m_last_time_eat, NULL) != 0)
+		{
+			return (false);
+		}
+
 		(*table)->philos[i].id = i + 1;
 		(*table)->philos[i].times_ate = (*table)->repeat_time;
 		(*table)->philos[i].chops.left = i;

@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:14:03 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:14:09 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/26 13:24:18 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,21 @@ bool	threading(t_table *table)
 	size_t	i;
 
 	i = 0;
-	// table->time_begin = get_time();
+	table->time_begin = get_time();
+
+
 	if (pthread_mutex_init(&table->m_philo_id, NULL) != 0)
 		return (false);
 	if (pthread_mutex_init(&table->m_philo_data, NULL) != 0)
 		return (false);
+	if (!table->time_begin)
+	{
+		table->time_begin = get_time();
+	}
 	while (i < table->philos_nb)
 	{
-		pthread_mutex_lock(&table->m_philo_id);
-		table->n_thread = i;
-		pthread_mutex_unlock(&table->m_philo_id);
 		if (pthread_create(&table->philos[i].thread, NULL, &routine,
-				(void *)table))
+				(void *)&table->philos[i]))
 			return (false);
 		i++;
 	}

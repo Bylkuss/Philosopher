@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:42 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:13:45 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/26 13:32:07 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,21 @@
  */
 bool	eat(t_table *table, t_philos *philo)
 {
-	if (repeat_time(table) == false)
-		return (false);
 	pthread_mutex_lock(&table->m_repeat_time);
 	table->stop--;
 	pthread_mutex_unlock(&table->m_repeat_time);
-	pthread_mutex_lock(&table->m_philo_data);
-	if (!table->time_begin)
-		table->time_begin = get_time();
-	philo->time_to_die = get_time();
-	pthread_mutex_unlock(&table->m_philo_data);
+	// pthread_mutex_unlock(&table->m_philo_data);
+	if (repeat_time(table) == false)
+		return(false);
 	pthread_mutex_lock(&table->chopsticks[philo->chops.left]);
 	if (!print_output(table, philo->id, BBLUE, CHOPSTICK1))
 		return (false);
 	pthread_mutex_lock(&table->chopsticks[philo->chops.right]);
 	if (!print_output(table, philo->id, BBLUE, CHOPSTICK2))
 		return (false);
+	pthread_mutex_lock(&philo->m_last_time_eat);
+	philo->last_time_eat = get_time() - table->time_begin;
+	pthread_mutex_unlock(&philo->m_last_time_eat);
 	if (!print_output(table, philo->id, BGREEN, EATING))
 		return (false);
 	create_delay(table->time_to_eat);
@@ -99,26 +98,33 @@ bool	think(t_table *table, t_philos *philo)
  */
 bool	is_philo_dead(t_table *table, t_philos *philo)
 {
-	time_t	time;
+	// time_t	time;
 	time_t	akud;
+	time_t	diego;
 
 	// time_t	ultimatum;
-	pthread_mutex_lock(&table->m_philo_data);
+	// pthread_mutex_lock(&table->m_philo_data);
+	pthread_mutex_lock(&philo->m_last_time_eat);
 	akud = time_range(table->time_begin);
-	time = time_range(philo->time_to_die);
+	// time = time_range(philo->time_to_die);
+	diego = get_time();
 	// ultimatum = (time_t)table->ultimatum;
-	if (time > (time_t)table->ultimatum)
+	// if (time > (time_t)table->ultimatum)
+	if (((size_t)(get_time() - table->time_begin) - philo->last_time_eat) > table->ultimatum)
 	{
-		pthread_mutex_unlock(&table->m_philo_data);
+		// pthread_mutex_unlock(&table->m_philo_data);
 		pthread_mutex_lock(&table->m_dead);
 		table->is_philos_dead = true;
 		pthread_mutex_unlock(&table->m_dead);
 		pthread_mutex_lock(&table->writing_lock);
 		printf("%s%-10ld %-3zu %-30s%s\n", BRED, akud, philo->id, DEAD, RESET);
+		// printf("\n 2 D table->ultimatum{%ld} philo->last_time_eat{%ld} \n", (get_time() - table->time_begin) - philo->last_time_eat, philo->last_time_eat);
 		pthread_mutex_unlock(&table->writing_lock);
+		pthread_mutex_unlock(&philo->m_last_time_eat);
 		return (true);
 	}
-	pthread_mutex_unlock(&table->m_philo_data);
+	// pthread_mutex_unlock(&table->m_philo_data);
+	pthread_mutex_unlock(&philo->m_last_time_eat);
 	// if(!repeat_time(table))
 	// 	return (false);
 	return (false);

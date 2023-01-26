@@ -1,0 +1,25 @@
+[1;34m0          1   has taken the  first chopstick[0m
+[1;34m0          1   has taken the second chopstick[0m
+[1;32m0          1   is eating                     [0m
+[1;34m1          3   has taken the  first chopstick[0m
+[1;34m1          3   has taken the second chopstick[0m
+[1;32m1          3   is eating                     [0m
+[1;33m200        1   is sleeping                   [0m
+[1;34m200        2   has taken the  first chopstick[0m
+[1;33m201        3   is sleeping                   [0m
+[1;34m201        2   has taken the second chopstick[0m
+[1;32m201        2   is eating                     [0m
+[1;34m201        4   has taken the  first chopstick[0m
+[1;34m201        4   has taken the second chopstick[0m
+[1;32m201        4   is eating                     [0m
+[1;35m400        1   is thinking                   [0m
+[1;35m401        3   is thinking                   [0m
+[1;33m401        2   is sleeping                   [0m
+[1;34m401        3   has taken the  first chopstick[0m
+[1;34m401        1   has taken the  first chopstick[0m
+[1;34m401        3   has taken the second chopstick[0m
+[1;32m401        3   is eating                     [0m
+[1;34m401        1   has taken the second chopstick[0m
+[1;32m401        1   is eating                     [0m
+[1;33m401        4   is sleeping                   [0m
+[1;31m412        2   IS DEAD                       [0m

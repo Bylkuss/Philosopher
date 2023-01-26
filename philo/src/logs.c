@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 12:53:26 by hsaadi            #+#    #+#             */
-/*   Updated: 2023/01/25 14:03:52 by loadjou          ###   ########.fr       */
+/*   Created: 2023/01/25 19:13:37 by loadjou           #+#    #+#             */
+/*   Updated: 2023/01/25 19:13:39 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ bool	msg_error(char *str)
 bool	print_output(t_table *table, size_t id, char *color, char *status)
 {
 	time_t	present;
-	size_t is_dead;
+	size_t	is_dead;
 
 	present = time_range(table->time_begin);
 	pthread_mutex_lock(&table->m_dead);
@@ -63,9 +63,8 @@ bool	print_output(t_table *table, size_t id, char *color, char *status)
 	pthread_mutex_unlock(&table->m_dead);
 	if (is_dead)
 		return (false);
-	
 	pthread_mutex_lock(&table->writing_lock);
-		printf("%s%-10ld %-3zu %-30s%s\n", color, present, id, status, RESET);
+	printf("%s%-10ld %-3zu %-30s%s\n", color, present, id, status, RESET);
 	pthread_mutex_unlock(&table->writing_lock);
 	return (true);
 }

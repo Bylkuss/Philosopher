@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 12:00:49 by hsaadi            #+#    #+#             */
-/*   Updated: 2023/01/25 16:16:46 by loadjou          ###   ########.fr       */
+/*   Created: 2023/01/25 19:13:32 by loadjou           #+#    #+#             */
+/*   Updated: 2023/01/25 19:13:34 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ static bool	init_philos(t_table **table)
 			(*table)->philos[i].chops.right = j++;
 		i++;
 	}
-	if(pthread_mutex_init(&(*table)->m_repeat_time, NULL) != 0)
-		return false;
+	if (pthread_mutex_init(&(*table)->m_repeat_time, NULL) != 0)
+		return (false);
 	return (true);
 }
 
@@ -146,7 +146,7 @@ bool	init_table(size_t argc, char **argv, t_table *table)
 	table->time_begin = 0;
 	if (argv[5])
 		table->repeat_time = ft_atol(argv[5]);
-	else 
+	else
 		table->repeat_time = -1;
 	table->stop = table->philos_nb * table->repeat_time;
 	if (!print_args_errors(table, argc))

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 12:55:13 by hsaadi            #+#    #+#             */
-/*   Updated: 2023/01/25 18:09:46 by loadjou          ###   ########.fr       */
+/*   Created: 2023/01/25 19:13:57 by loadjou           #+#    #+#             */
+/*   Updated: 2023/01/25 19:13:59 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ void	*maestro_routine(void *args)
 	while (repeat_time(table))
 	{
 		// if(!repeat_time(table))
-		// 	break;
+		// 	break ;
 		if (i == nb_philos - 1)
 			i = 0;
 		if (is_philo_dead(table, &table->philos[i]))
-			return NULL ;
+			return (NULL);
 		i++;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:57 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:13:59 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/26 20:42:35 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ void	*maestro_routine(void *args)
 	pthread_mutex_lock(&table->m_philo_data);
 	nb_philos = table->philos_nb;
 	pthread_mutex_unlock(&table->m_philo_data);
-	while (repeat_time(table))
+	while (1)
 	{
-		// if(!repeat_time(table))
-		// 	break ;
+		if(!repeat_time(table))
+			break ;
 		if (i == nb_philos - 1)
 			i = 0;
 		if (is_philo_dead(table, &table->philos[i]))

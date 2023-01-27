@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:57 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/26 16:02:03 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:28:44 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ void	*routine(void *args)
 	t_philos	*philo;
 	t_table		*table;
 
-	// size_t	i;
 	philo = (t_philos *)args;
 	table = philo->table;
 	if (philo->id % 2 == 0)
 	{
-		/* usleep(15000) */;
+		usleep(500);
 	}
 	while (1)
 	{
@@ -47,7 +46,8 @@ void	*routine(void *args)
 
 /**
 
-	* @brief The routine the maestro should run to check if any other philo is dead or should die!
+	* @brief The routine the maestro should run to check if any other philo is dead
+		or should die!
  * 
  * @param args The address of the struct to use 
  * @return void* 
@@ -60,13 +60,11 @@ void	*maestro_routine(void *args)
 
 	table = (t_table *)args;
 	i = 0;
-	pthread_mutex_lock(&table->m_philo_data);
 	nb_philos = table->philos_nb;
-	pthread_mutex_unlock(&table->m_philo_data);
 	while (1)
 	{
-		// if (!repeat_time(table))
-		// 	break ;
+		if (!repeat_time(table))
+			break ;
 		if (i == nb_philos - 1)
 			i = 0;
 		if (is_philo_dead(table, &table->philos[i]))

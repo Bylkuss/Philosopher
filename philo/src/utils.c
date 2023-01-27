@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:14:14 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:14:16 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:30:25 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,20 +87,14 @@ void	create_delay(time_t time)
 		usleep(50);
 }
 
-/**
- * @brief Sleep for a certain time
- * 
- * @param time_to_stop The time to stop
- */
-void	ft_sleep(long int time_to_stop)
+bool	repeat_time(t_table *table)
 {
-	long int	delay;
-
-	while (1)
+	pthread_mutex_lock(&table->m_repeat_time);
+	if (table->repeat_time > 0 && table->stop <= 0)
 	{
-		delay = time_to_stop - get_time();
-		if (delay <= 0)
-			break ;
-		usleep(50);
+		pthread_mutex_unlock(&table->m_repeat_time);
+		return (false);
 	}
+	pthread_mutex_unlock(&table->m_repeat_time);
+	return (true);
 }

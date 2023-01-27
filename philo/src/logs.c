@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:37 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:13:39 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:01:50 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,4 @@ void	philos_free(t_table *table)
 {
 	free(table->chopsticks);
 	free(table->philos);
-}
-
-/**
- * @brief Create some delay using a starting time
- * 
- * @param start_time 
- */
-void	start_some_delay(time_t start_time)
-{
-	while (get_time() < start_time)
-		continue ;
 }

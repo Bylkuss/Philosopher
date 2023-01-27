@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:32 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:13:34 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:21:40 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
  * @brief Manages one philosopher's life cycle
  *
 
-	* This function takes in a pointer to a table and simulates the life cycle of a philosopher.
+	* This function takes in a pointer to a table and simulates the life 
+		cycle of a philosopher.
 
-	* It starts by getting the current time and storing it in the time_begin variable.
+	* It starts by getting the current time and storing it in the time_begin
+		variable.
  * Then it locks the left chopstick associated with the first philosopher,
  * prints a message indicating that the philosopher is eating,
  * creates a delay for a certain amount of time,
@@ -37,11 +39,11 @@ static bool	manage_one_philo(t_table *table)
 	table->time_begin = get_time();
 	pthread_mutex_lock(&table->chopsticks[table->philos[0].chops.left]);
 	printf("%s%-10ld %-3zu %-30s%s\n", BBLUE, present, table->philos[0].id,
-			CHOPSTICK1, RESET);
+		CHOPSTICK1, RESET);
 	create_delay(table->ultimatum);
 	present = time_range(table->time_begin);
 	printf("%s%-10ld %-3zu %-30s%s\n", BRED, present, table->philos[0].id, DEAD,
-			RESET);
+		RESET);
 	pthread_mutex_unlock(&table->chopsticks[table->philos[0].chops.left]);
 	table->is_philos_dead = true;
 	return (false);
@@ -50,8 +52,10 @@ static bool	manage_one_philo(t_table *table)
 /**
  * @brief Initialize chopsticks for the table
  * 
-	* This function takes in a pointer to a table and allocates memory for the chopsticks and initializes them 
-	* using pthread_mutex_init. It also initializes the writing_lock using pthread_mutex_init.
+	* This function takes in a pointer to a table and allocates memory for the
+		chopsticks and initializes them 
+	* using pthread_mutex_init. It also initializes the writing_lock using
+		pthread_mutex_init.
  *
  * @param table Pointer to the table structure
  * @return true if initialization is successful
@@ -82,7 +86,8 @@ static bool	init_chops(t_table *table)
  * @brief Initialize philosophers and chopsticks for the table
  * 
 
-	* This function takes in a pointer to a table and allocates memory for the philosophers and chopsticks,
+	* This function takes in a pointer to a table and allocates memory
+	for the philosophers and chopsticks,
 	
  * initializes the philosophers' id and times_ate,
 	and assigns left and right chopsticks to each philosopher.
@@ -94,24 +99,25 @@ static bool	init_chops(t_table *table)
 static bool	init_philos(t_table **table)
 {
 	size_t	i;
-	size_t	j;
 
 	(*table)->philos = malloc(sizeof(t_philos) * ((*table)->philos_nb + 1));
 	if (!(*table)->philos)
 		return (msg_error(ERRMAL));
 	i = 0;
-	j = 1;
 	if (!init_chops(*table))
 		return (msg_error(ERRMAL));
 	while (i < (*table)->philos_nb)
 	{
+		(*table)->philos[i].table = (*table);
+		(*table)->philos[i].last_time_eat = -1;
+		if (pthread_mutex_init(&(*table)->philos[i].m_last_time_eat, NULL) != 0)
+		{
+			return (false);
+		}
 		(*table)->philos[i].id = i + 1;
 		(*table)->philos[i].times_ate = (*table)->repeat_time;
 		(*table)->philos[i].chops.left = i;
-		if (i == (*table)->philos_nb - 1)
-			(*table)->philos[i].chops.right = 0;
-		else
-			(*table)->philos[i].chops.right = j++;
+		(*table)->philos[i].chops.right = (i + 1) % (*table)->philos_nb;
 		i++;
 	}
 	if (pthread_mutex_init(&(*table)->m_repeat_time, NULL) != 0)
@@ -121,10 +127,12 @@ static bool	init_philos(t_table **table)
 
 /**
 *@brief Initialize the table struct with values passed as command line arguments.
-* The function sets the number of philosophers to either the value passed as an argument or a maximum of 200,
+* The function sets the number of philosophers to either the
+		value passed as an argument or a maximum of 200,
 	assigns values to other table properties such as ultimatum, time to eat,
-	and time to sleep. It also checks for errors in the arguments passed and initializes the philosophers.
-If the number of philosophers is one,
+	and time to sleep. It also checks for errors in the arguments 
+		passed and initializes the philosophers.
+	If the number of philosophers is one,
 	it calls a separate function to manage the single philosopher.
 Overall,this function sets up the table and philosophers for the program to run.
 *@param argc The number of arguments passed
@@ -155,6 +163,6 @@ bool	init_table(size_t argc, char **argv, t_table *table)
 		return (false);
 	table->is_philos_dead = false;
 	if (table->philos_nb == 1)
-		manage_one_philo(table);
+		return (manage_one_philo(table));
 	return (true);
 }

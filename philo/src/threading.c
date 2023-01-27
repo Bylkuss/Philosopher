@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:14:03 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/25 19:14:09 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:29:47 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
  * @brief Create and manage threads for philosophers and maestro
  *
 
-	* This function takes in a pointer to a table and creates threads for each philosopher
+	* This function takes in a pointer to a table and creates threads for
+		each philosopher
 
-	* and the maestro using pthread_create and assigns the routine function for the philosophers
+	* and the maestro using pthread_create and assigns the routine function
+		for the philosophers
  * and maestro_routine function for the maestro.
 
-	* It also calls joining_threads function to wait for all threads to complete before returning.
+	* It also calls joining_threads function to wait for all threads to complete
+		before returning.
  *
  * @param table Pointer to the table structure
  * @return true if thread creation and management is successful
@@ -33,18 +36,17 @@ bool	threading(t_table *table)
 	size_t	i;
 
 	i = 0;
-	// table->time_begin = get_time();
+	table->time_begin = get_time();
 	if (pthread_mutex_init(&table->m_philo_id, NULL) != 0)
 		return (false);
 	if (pthread_mutex_init(&table->m_philo_data, NULL) != 0)
 		return (false);
+	if (!table->time_begin)
+		table->time_begin = get_time();
 	while (i < table->philos_nb)
 	{
-		pthread_mutex_lock(&table->m_philo_id);
-		table->n_thread = i;
-		pthread_mutex_unlock(&table->m_philo_id);
 		if (pthread_create(&table->philos[i].thread, NULL, &routine,
-				(void *)table))
+				(void *)&table->philos[i]))
 			return (false);
 		i++;
 	}
@@ -59,7 +61,8 @@ bool	threading(t_table *table)
  * @brief Wait for all threads to complete
  *
 
-	* This function takes in a pointer to a table and waits for all philosopher threads
+	* This function takes in a pointer to a table and waits for all
+		philosopher threads
  * and maestro thread to complete using pthread_join.
  *
  * @param table Pointer to the table structure

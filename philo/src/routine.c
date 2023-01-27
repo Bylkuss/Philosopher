@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:57 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/26 20:42:35 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/27 12:08:01 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@
  */
 void	*routine(void *args)
 {
-	t_table	*table;
-	size_t	i;
+	t_philos	*philo;
+	t_table		*table;
 
-	table = (t_table *)args;
-	pthread_mutex_lock(&table->m_philo_id);
-	i = table->n_thread;
-	pthread_mutex_unlock(&table->m_philo_id);
-	// if (i % 2 == 0)
-	// 	usleep(20);
+	philo = (t_philos *)args;
+	table = philo->table;
+	if (philo->id % 2 == 0)
+	{
+		usleep(500);
+	}
 	while (1)
 	{
-		if (!eat(table, &table->philos[i]))
+		if (!eat(table, philo))
 		{
-			drop_chops(table, &table->philos[i]);
+			drop_chops(table, philo);
 			return (false);
 		}
-		if (!go_to_sleep(table, &table->philos[i]))
+		if (!go_to_sleep(table, philo))
 			return (false);
-		if (!think(table, &table->philos[i]))
+		if (!think(table, philo))
 			return (false);
 	}
 	return (NULL);
@@ -46,7 +46,8 @@ void	*routine(void *args)
 
 /**
 
-	* @brief The routine the maestro should run to check if any other philo is dead or should die!
+	* @brief The routine the maestro should run to check if any other philo is dead
+		or should die!
  * 
  * @param args The address of the struct to use 
  * @return void* 
@@ -59,12 +60,10 @@ void	*maestro_routine(void *args)
 
 	table = (t_table *)args;
 	i = 0;
-	pthread_mutex_lock(&table->m_philo_data);
 	nb_philos = table->philos_nb;
-	pthread_mutex_unlock(&table->m_philo_data);
 	while (1)
 	{
-		if(!repeat_time(table))
+		if (!repeat_time(table))
 			break ;
 		if (i == nb_philos - 1)
 			i = 0;

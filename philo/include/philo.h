@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 12:01:31 by hsaadi            #+#    #+#             */
-/*   Updated: 2023/01/26 12:56:02 by loadjou          ###   ########.fr       */
+/*   Created: 2023/01/30 08:33:24 by loadjou           #+#    #+#             */
+/*   Updated: 2023/01/30 08:37:56 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,13 @@
 /*                                  INCLUDES                                 */
 /* *************** ***************           *************** *************** */
 # include <limits.h>
+# include <pthread.h>
 # include <stdbool.h>
 # include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <unistd.h>
-
-// For time management
 # include <sys/time.h>
-
-// For threading
-# include <pthread.h>
+# include <unistd.h>
 
 /* *************** ***************           *************** *************** */
 /*                                   MACROS                                  */
@@ -82,8 +78,8 @@ typedef struct s_philos
 	size_t			time_to_die;
 	t_chopstick		chops;
 	struct s_table	*table;
-	pthread_mutex_t m_last_time_eat;
-	size_t last_time_eat;
+	pthread_mutex_t	m_last_time_eat;
+	size_t			last_time_eat;
 }					t_philos;
 
 typedef struct s_table
@@ -100,10 +96,10 @@ typedef struct s_table
 	pthread_mutex_t	*chopsticks;
 	pthread_mutex_t	writing_lock;
 	pthread_t		maestro;
-	pthread_mutex_t m_repeat_time;
-	pthread_mutex_t m_dead;
-	pthread_mutex_t m_philo_id;
-	pthread_mutex_t m_philo_data;
+	pthread_mutex_t	m_repeat_time;
+	pthread_mutex_t	m_dead;
+	pthread_mutex_t	m_philo_id;
+	pthread_mutex_t	m_philo_data;
 	t_philos		*philos;
 }					t_table;
 
@@ -126,21 +122,14 @@ bool				print_output(t_table *table, size_t id, char *color,
 						char *status);
 
 /* ***** MOVES.c ***** */
-// bool				eat(t_table *table, size_t i);
-bool	eat(t_table *table, t_philos *philo);
-// bool				go_to_sleep(t_table *table, size_t i);
-bool	go_to_sleep(t_table *table, t_philos *philo);
-// bool				think(t_table *table, size_t i);
-bool	think(t_table *table,t_philos *philo);
-// bool				is_philo_dead(t_table *table, size_t i);
-bool	is_philo_dead(t_table *table, t_philos *philo);
-// bool				drop_chops(t_table *table, size_t i);
-bool	repeat_time(t_table *table);
-bool	drop_chops(t_table *table, t_philos *philo);
+bool				eat(t_table *table, t_philos *philo);
+bool				go_to_sleep(t_table *table, t_philos *philo);
+bool				think(t_table *table, t_philos *philo);
+bool				is_philo_dead(t_table *table, t_philos *philo);
+bool				drop_chops(t_table *table, t_philos *philo);
 
 /* ***** ROUTINE.c ***** */
 void				*routine(void *args);
-size_t				run_routine(t_table *table, size_t i);
 void				*maestro_routine(void *args);
 
 /* ***** THREADING.c ***** */
@@ -153,22 +142,6 @@ size_t				ft_atol(const char *str);
 time_t				get_time(void);
 time_t				time_range(time_t time);
 void				create_delay(time_t time);
-void				start_some_delay(time_t start_time);
+bool				repeat_time(t_table *table);
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-/* Test 5 800 200 200. No philosopher should die.
-Test 5 800 200 200 7. No philosopher should die and the simulation should stop when every philosopher
-has eaten at least 7 times.
-Test 4 410 200 200. No philosopher should die.
-Test 4 310 200 100. One philosopher should die. */

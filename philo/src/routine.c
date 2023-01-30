@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 19:13:57 by loadjou           #+#    #+#             */
-/*   Updated: 2023/01/27 12:08:01 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/01/27 12:16:50 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ void	*routine(void *args)
 
 	philo = (t_philos *)args;
 	table = philo->table;
-	if (philo->id % 2 == 0)
-	{
-		usleep(500);
-	}
 	while (1)
 	{
 		if (!eat(table, philo))

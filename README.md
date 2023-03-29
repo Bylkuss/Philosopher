@@ -14,6 +14,9 @@
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/bylkuss/philosophers?color=blue" />
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/bylkuss/philosophers?color=green" />
 </p>
+<div align="center">
+<img width="350" alt="output screenshot" src="https://user-images.githubusercontent.com/70220629/228586613-b8051dcd-9f2d-4267-a2ad-684dfd1b0e8d.png">
+</div>
 
 ## Table of Content
 
@@ -31,6 +34,7 @@ The project consists of two parts: the mandatory part and the bonus part. The ma
 - Thread creation and management
 - Mutex usage for synchronization
 - Concurrent programming
+
 - Problem-solving
 
 #### Technologies Used
